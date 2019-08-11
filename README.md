@@ -1,3 +1,16 @@
-# test
+# LoopBack 4 Auth 
 
-[![LoopBack](https://github.com/strongloop/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm start
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
