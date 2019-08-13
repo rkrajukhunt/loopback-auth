@@ -1,11 +1,11 @@
 {
   "name": "mongo",
   "connector": "mongodb",
-  "url": "",
-  "host": "localhost",
-  "port": 27017,
-  "user": "",
-  "password": "",
-  "database": "auth",
+  "url": "mongodb://temp:temp123@ds016148.mlab.com:16148/stream",
+  "host": "ds159185.mlab.com:59185",
+  "port": 59185,
+  "user": "EmperorBrains",
+  "password": "raju123456",
+  "database": "chatapp",
   "useNewUrlParser": true
 }

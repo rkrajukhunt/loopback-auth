@@ -21,14 +21,14 @@ import {
 import { User } from '../models';
 import { UserRepository } from '../repositories';
 import * as jwt from 'jsonwebtoken';
-import { authenticate, AuthenticationBindings } from '@loopback/authentication'
+import { authenticate, AuthenticationBindings, UserProfile } from '@loopback/authentication'
 import { inject } from '@loopback/core';
 
 export class UserController {
-    constructor (
+    constructor(
         @repository(UserRepository)
         public userRepository: UserRepository,
-        @inject(AuthenticationBindings.CURRENT_USER) private currentUser: User
+        //@inject(AuthenticationBindings.CURRENT_USER) private currentUser: User
     ) { }
 
     @post('/users', {
@@ -88,11 +88,12 @@ export class UserController {
         };
     }
 
-    @get('/users/current')
     @authenticate('jwt')
-    async current(): Promise<any> {
-        console.log('current : ', this.currentUser);
-        return this.currentUser;
+    @get('/users/current')
+    async printCurrentUser(
+        @inject(AuthenticationBindings.CURRENT_USER) currentUserProfile: UserProfile,
+    ): Promise<UserProfile> {
+        return currentUserProfile;
     }
 
 }

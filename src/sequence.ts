@@ -24,7 +24,7 @@ import {
 const SequenceActions = RestBindings.SequenceActions;
 
 export class MyAuthenticationSequence implements SequenceHandler {
-  constructor (
+  constructor(
     @inject(SequenceActions.FIND_ROUTE) protected findRoute: FindRoute,
     @inject(SequenceActions.PARSE_PARAMS)
     protected parseParams: ParseParams,
@@ -39,8 +39,6 @@ export class MyAuthenticationSequence implements SequenceHandler {
     try {
       const { request, response } = context;
       const route = this.findRoute(request);
-
-      console.log('aya pogyu');
 
       //call authentication action
       await this.authenticateRequest(request);
@@ -85,7 +83,7 @@ export class MyAuthenticationSequence implements SequenceHandler {
 }
 
 export class MySequence implements SequenceHandler {
-  constructor (
+  constructor(
     @inject(SequenceActions.FIND_ROUTE) protected findRoute: FindRoute,
     @inject(SequenceActions.PARSE_PARAMS) protected parseParams: ParseParams,
     @inject(SequenceActions.INVOKE_METHOD) protected invoke: InvokeMethod,
